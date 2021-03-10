@@ -32,12 +32,18 @@ extension EachPhotoDisplayViewController {
      */
     @objc func image(_ image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafeRawPointer) {
         let alert = UIAlertController(title: "이미지 저장 완료", message: "Photos Library에 저장되었습니다.", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "나가기", style: UIAlertAction.Style.default, handler: { (act) in
+        alert.view.accessibilityIdentifier = "Each.Alert"
+        let action = UIAlertAction(title: "나가기", style: UIAlertAction.Style.default, handler: { (act) in
             self.goBackAction {
                 self.delegate?.doneEditing()
             }
-        }))
-        self.present(alert, animated: true, completion: nil)
+        })
+        action.accessibilityIdentifier = "Each.Check" // for UITest
+        action.accessibilityLabel = "Each.Check.Label"
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: {
+            alert.applyAccessibilityIdentifiers()
+        })
     }
     
     /**

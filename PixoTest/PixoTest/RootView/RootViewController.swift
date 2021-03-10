@@ -50,6 +50,7 @@ class RootViewController: UIViewController {
     
     private func navigationBarSetting() {
         let btn = UIButton(frame: .zero)
+        btn.accessibilityIdentifier = "RootView.NaviTitleBtn" // UITest를 위한 ID
         btn.addTarget(self, action: #selector(self.titleBtnAction(_:)), for: .touchUpInside)
         btn.semanticContentAttribute = .forceRightToLeft
         

@@ -55,11 +55,11 @@ extension AlbumElementViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Check indexpath : \(indexPath)")
+        //NSLog("Check indexpath : \(indexPath)")
         guard let lists = self.viewModel?.imageLists, lists.count > indexPath.row else {
             return
         }
-        print("Check element : \(lists[indexPath.row])")
+        //NSLog("Check element : \(lists[indexPath.row])")
         let asset = lists[indexPath.row]
         let option = PHImageRequestOptions()
         option.deliveryMode = .highQualityFormat
@@ -69,8 +69,8 @@ extension AlbumElementViewController: UICollectionViewDelegate, UICollectionView
         let size : CGSize = UIScreen.main.bounds.size//.init(width: , height: 80)
         PHImageManager.default().requestImage(for: asset, targetSize: size, contentMode: .default, options: option) { (img, info) in
             //self.imvThumbnailSquare.image = img
-            print("Wait! : \(img)")
-            print("Breaker")
+            //NSLog("image Check : \(img)")
+            //NSLog("Breaker")
             
             guard let img = img else {return}
             

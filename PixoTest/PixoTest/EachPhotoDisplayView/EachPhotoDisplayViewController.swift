@@ -69,11 +69,13 @@ class EachPhotoDisplayViewController: UIViewController {
         
         //MARK: Close Button Setting
         self.btnClose.addTarget(self, action: #selector(self.btnCloseAction(_:)), for: .touchUpInside)
+        self.btnClose.accessibilityIdentifier = "Each.Back" // for UITest
         
         
         //MARK: Overlay Button Setting
         self.btnOverlaySave.setTitle("Overlay", for: .normal)
         self.btnOverlaySave.addTarget(self, action: #selector(self.btnOverlayAction(_:)), for: .touchUpInside)
+        self.btnOverlaySave.accessibilityIdentifier = "Each.Save" // for UITest
         self.btnOverlaySave.layer.cornerRadius = self.btnOverlaySave.bounds.height / 2
         //self.btnOverlaySave.layer.borderWidth = 1
         self.overlayBtnDisplaySetting()
@@ -81,6 +83,7 @@ class EachPhotoDisplayViewController: UIViewController {
         //MARK: CollectionView Setting
         let cvCell = UINib(nibName: self.stickerCell, bundle: nil)
         self.cvStickerList.register(cvCell, forCellWithReuseIdentifier: self.stickerCell)
+        self.cvStickerList.accessibilityIdentifier = "Each.CV" // for UITest
         self.cvStickerList.delegate = self
         self.cvStickerList.dataSource = self
         

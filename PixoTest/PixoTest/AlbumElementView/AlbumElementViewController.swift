@@ -43,6 +43,7 @@ class AlbumElementViewController: UIViewController {
     
     //MARK: - View Controller Setting methods
     private func commonInit() {
+        self.cvLists.accessibilityIdentifier = "Albums.CV"//UITest를 위한 ID
         self.cvLists.delegate = self
         self.cvLists.dataSource = self
         
@@ -72,6 +73,7 @@ class AlbumElementViewController: UIViewController {
         //새로운 back button 생성
         self.navigationItem.hidesBackButton = true
         let backButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(self.btnBackAction(_:)))
+        backButton.accessibilityIdentifier = "Albums.Back"
         self.navigationItem.leftBarButtonItem = backButton
         
         //MARK: color setting
@@ -105,7 +107,7 @@ class AlbumElementViewController: UIViewController {
     private func testCodeForList() {
         let collection = self._albumData.collection
         let result = PHAsset.fetchAssets(in: collection, options: nil)
-        print("Check result : \(result)")
+        NSLog("Check result : \(result)")
     }
     
     @objc func btnBackAction(_ sender : UIBarButtonItem) {

@@ -14,8 +14,14 @@ extension RootViewController : UICollectionViewDelegate, UICollectionViewDataSou
     //Section이 이용되는 방식은 Square일 경우에는 1개만 필요(모든 Photo가 보여지기 때문에 Section으로 나누지 아니함.
     //Table인 경우에는 각 Collection 별로 따로 보여줘야 하기 때문에 Collection을 포함하는 albumLists갯수만큼 반환한다.
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        if self.displayType == .square { return 1 }
-        else{ return self.viewModel?.albumLists.count ?? 0 }
+        if self.displayType == .square {
+            collectionView.accessibilityIdentifier = "RootView.CV.Square" // for uitest
+            return 1
+        }
+        else{
+            collectionView.accessibilityIdentifier = "RootView.CV.Table" // for uitest
+            return self.viewModel?.albumLists.count ?? 0
+        }
     }
     
     //
@@ -26,8 +32,8 @@ extension RootViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 if model.count > 0 { return model.count }
                 else{ return nil }
             }).reduce(0, +) ?? 0
-            print("Check result Count : Total : \(resultCount)")
-            print("Data count : \(self.viewModel?.totalLists)")
+            NSLog("Check result Count : Total : \(resultCount)")
+             NSLog("Data count : \(self.viewModel?.totalLists)")
             return resultCount
             */
             return self.viewModel?.photoLists.count ?? 0
@@ -49,7 +55,7 @@ extension RootViewController : UICollectionViewDelegate, UICollectionViewDataSou
             }
             let data = lists[listIndex]
             counter += data.count
-            print("Checker album : \(counter) ++ \(data.count) || \(index) :: \(indexPath)")
+            NSLog("Checker album : \(counter) ++ \(data.count) || \(index) :: \(indexPath)")
             if counter > indexPath.row, data.count != 0 {
                 //특정 인덱스의 photo를 보여주기 위한 계산 값 : indexPath.row - (counter - data.count)
                 //이 계산식이 나오는 이유 : lists들을 0번 인덱스 부터 n 까지 각 element의 collection들을 차례로 뿌려줬기 때문.
@@ -60,7 +66,7 @@ extension RootViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 listIndex += 1
             }
         } while (albumModelData == nil)
-        print("Return data : \(index)")
+        NSLog("Return data : \(index)")
         return (albumModelData, index)
     }
     */
@@ -95,7 +101,7 @@ extension RootViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 return AlbumListTableCVCell()
             }
             guard let _list = self.viewModel?.albumLists, _list.count > indexPath.section else { return cell }
-            print("INDEX : \(indexPath.section) :: \(_list[indexPath.section].name)")
+            NSLog("INDEX : \(indexPath.section) :: \(_list[indexPath.section].name)")
             let data = _list[indexPath.section]
             //cell.setData(img: data.thumbnail, title: data.name)
             cell.setData(collection: data.collection, title: data.name)
@@ -139,7 +145,7 @@ extension RootViewController : UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Index : \(indexPath)")
+        NSLog("Index : \(indexPath)")
         //수정 후 돌아올 때는 Delegate를 통해서 전체 view를 다시 load한 번 해줘야 한다.
         if self.displayType == .square {
             //각 image별로 수정하는 view로 이동시킨다.
@@ -154,9 +160,6 @@ extension RootViewController : UICollectionViewDelegate, UICollectionViewDataSou
             //target size : 이미지가 return 될 때 목표하는 사이즈. Screen size와 맞게 해주자.
             let size : CGSize = UIScreen.main.bounds.size//.init(width: , height: 80)
             PHImageManager.default().requestImage(for: asset, targetSize: size, contentMode: .default, options: option) { (img, info) in
-                //self.imvThumbnailSquare.image = img
-                print("Wait! : \(img)")
-                print("Breaker")
                 
                 guard let img = img else {return}
                 

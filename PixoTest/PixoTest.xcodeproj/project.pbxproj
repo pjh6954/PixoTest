@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		726B9CC925F883EC0042B4B5 /* UIAlert+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726B9CC825F883EC0042B4B5 /* UIAlert+Extensions.swift */; };
 		72AEC0C925F5D4F20010D9BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AEC0C825F5D4F20010D9BB /* AppDelegate.swift */; };
 		72AEC0CB25F5D4F20010D9BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AEC0CA25F5D4F20010D9BB /* SceneDelegate.swift */; };
 		72AEC0CD25F5D4F20010D9BB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AEC0CC25F5D4F20010D9BB /* RootViewController.swift */; };
@@ -77,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		726B9CC825F883EC0042B4B5 /* UIAlert+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlert+Extensions.swift"; sourceTree = "<group>"; };
 		72AEC0C525F5D4F20010D9BB /* PixoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72AEC0C825F5D4F20010D9BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72AEC0CA25F5D4F20010D9BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				72AEC15C25F60FF70010D9BB /* UIImage+Extensions.swift */,
 				72AEC22625F723C60010D9BB /* UIImageView+Extensions.swift */,
 				72AEC22B25F725E10010D9BB /* UIVIew+Extensions.swift */,
+				726B9CC825F883EC0042B4B5 /* UIAlert+Extensions.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				726B9CC925F883EC0042B4B5 /* UIAlert+Extensions.swift in Sources */,
 				72AEC20C25F70FF20010D9BB /* StickerListCVCell.swift in Sources */,
 				72AEC1E225F7032E0010D9BB /* Protocols.swift in Sources */,
 				72AEC12D25F5E80A0010D9BB /* AlbumListTableCVCell.swift in Sources */,

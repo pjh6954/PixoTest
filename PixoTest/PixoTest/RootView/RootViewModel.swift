@@ -52,7 +52,7 @@ class RootViewModel : RootViewModelType, RootViewModelInput, RootViewModelOutput
         options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]//날짜순으로 정렬
         
         let result = PHAsset.fetchAssets(with: options)
-        print("ChECK Results : \(result)\n\(result.count)")
+        NSLog("ChECK Results : \(result)\n\(result.count)")
         
         */
         
@@ -85,8 +85,8 @@ class RootViewModel : RootViewModelType, RootViewModelInput, RootViewModelOutput
                     let albumCount = assetsFetchResult.count
                     // 저장
                     let newAlbum = AlbumModel(name:albumTitle, count: albumCount, collection:collection)
-                    print(newAlbum.name)
-                    print(newAlbum.count)
+                    NSLog(newAlbum.name)
+                    NSLog("\(newAlbum.count)")
                     //앨범 정보 추가
                     if newAlbum.count > 0 {
                         totalCount += newAlbum.count
