@@ -25,6 +25,7 @@ extension EachPhotoDisplayViewController {
     @objc func btnOverlayAction(_ sender: UIButton) {
         //save
         UIImageWriteToSavedPhotosAlbum(self.canvas.toImage(),self, #selector(self.image(_:withPotentialError:contextInfo:)), nil)
+        //UIImageWriteToSavedPhotosAlbum(self.canvas.toImage(CGRect(x: self.canvas.bounds.minX, y: self.canvas.bounds.minY, width: self.canvas.bounds.size.width / 2, height: self.canvas.bounds.size.height / 2)),self, #selector(self.image(_:withPotentialError:contextInfo:)), nil)
     }
     
     /**
@@ -42,7 +43,7 @@ extension EachPhotoDisplayViewController {
         action.accessibilityLabel = "Each.Check.Label"
         alert.addAction(action)
         self.present(alert, animated: true, completion: {
-            alert.applyAccessibilityIdentifiers()
+            //alert.applyAccessibilityIdentifiers()
         })
     }
     

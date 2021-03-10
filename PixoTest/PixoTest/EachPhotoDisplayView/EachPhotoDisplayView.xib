@@ -51,36 +51,48 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mrw-Pf-64l">
                     <rect key="frame" x="0.0" y="104" width="414" height="758"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvQ-FS-plP" userLabel="canvas">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dep-At-VhQ">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="630"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WMa-ZR-lcX" userLabel="imvDefault">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="630"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvQ-FS-plP" userLabel="canvas">
+                                    <rect key="frame" x="15" y="123" width="384" height="384"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WMa-ZR-lcX" userLabel="imvDefault">
+                                            <rect key="frame" x="0.0" y="0.0" width="384" height="384"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" priority="750" constant="650" id="I5c-Kk-og3"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="I5c-Kk-og3"/>
+                                                </mask>
+                                            </variation>
+                                        </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Axb-CE-16k">
+                                            <rect key="frame" x="0.0" y="0.0" width="384" height="384"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" priority="750" constant="650" id="I5c-Kk-og3"/>
+                                        <constraint firstItem="WMa-ZR-lcX" firstAttribute="centerX" secondItem="OvQ-FS-plP" secondAttribute="centerX" id="AMY-pY-th5"/>
+                                        <constraint firstItem="WMa-ZR-lcX" firstAttribute="top" secondItem="OvQ-FS-plP" secondAttribute="top" id="AMe-az-Y6S"/>
+                                        <constraint firstItem="Axb-CE-16k" firstAttribute="width" secondItem="WMa-ZR-lcX" secondAttribute="width" id="FlT-wW-Tma"/>
+                                        <constraint firstAttribute="bottom" secondItem="WMa-ZR-lcX" secondAttribute="bottom" id="P1P-Lt-tfv"/>
+                                        <constraint firstAttribute="trailing" secondItem="WMa-ZR-lcX" secondAttribute="trailing" id="RZG-jG-9na"/>
+                                        <constraint firstItem="WMa-ZR-lcX" firstAttribute="leading" secondItem="OvQ-FS-plP" secondAttribute="leading" id="Rxc-RO-U2R"/>
+                                        <constraint firstItem="Axb-CE-16k" firstAttribute="centerY" secondItem="WMa-ZR-lcX" secondAttribute="centerY" id="dgw-SC-Uo6"/>
+                                        <constraint firstItem="WMa-ZR-lcX" firstAttribute="centerY" secondItem="OvQ-FS-plP" secondAttribute="centerY" id="m9y-nE-w13"/>
+                                        <constraint firstItem="Axb-CE-16k" firstAttribute="centerX" secondItem="WMa-ZR-lcX" secondAttribute="centerX" id="ntm-je-04V"/>
+                                        <constraint firstItem="Axb-CE-16k" firstAttribute="height" secondItem="WMa-ZR-lcX" secondAttribute="height" id="vhb-yB-UYi"/>
                                     </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="I5c-Kk-og3"/>
-                                        </mask>
-                                    </variation>
-                                </imageView>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Axb-CE-16k">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="630"/>
-                                </imageView>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="WMa-ZR-lcX" firstAttribute="centerX" secondItem="OvQ-FS-plP" secondAttribute="centerX" id="AMY-pY-th5"/>
-                                <constraint firstItem="WMa-ZR-lcX" firstAttribute="top" secondItem="OvQ-FS-plP" secondAttribute="top" id="AMe-az-Y6S"/>
-                                <constraint firstItem="Axb-CE-16k" firstAttribute="width" secondItem="WMa-ZR-lcX" secondAttribute="width" id="FlT-wW-Tma"/>
-                                <constraint firstAttribute="bottom" secondItem="WMa-ZR-lcX" secondAttribute="bottom" id="P1P-Lt-tfv"/>
-                                <constraint firstAttribute="trailing" secondItem="WMa-ZR-lcX" secondAttribute="trailing" id="RZG-jG-9na"/>
-                                <constraint firstItem="WMa-ZR-lcX" firstAttribute="leading" secondItem="OvQ-FS-plP" secondAttribute="leading" id="Rxc-RO-U2R"/>
-                                <constraint firstItem="Axb-CE-16k" firstAttribute="centerY" secondItem="WMa-ZR-lcX" secondAttribute="centerY" id="dgw-SC-Uo6"/>
-                                <constraint firstItem="WMa-ZR-lcX" firstAttribute="centerY" secondItem="OvQ-FS-plP" secondAttribute="centerY" id="m9y-nE-w13"/>
-                                <constraint firstItem="Axb-CE-16k" firstAttribute="centerX" secondItem="WMa-ZR-lcX" secondAttribute="centerX" id="ntm-je-04V"/>
-                                <constraint firstItem="Axb-CE-16k" firstAttribute="height" secondItem="WMa-ZR-lcX" secondAttribute="height" id="vhb-yB-UYi"/>
+                                <constraint firstItem="OvQ-FS-plP" firstAttribute="centerX" secondItem="dep-At-VhQ" secondAttribute="centerX" id="3pT-tF-Vdt"/>
+                                <constraint firstItem="OvQ-FS-plP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dep-At-VhQ" secondAttribute="top" id="QRu-tC-Wf6"/>
+                                <constraint firstItem="OvQ-FS-plP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dep-At-VhQ" secondAttribute="leading" id="mNf-5v-2Og"/>
+                                <constraint firstItem="OvQ-FS-plP" firstAttribute="centerY" secondItem="dep-At-VhQ" secondAttribute="centerY" id="mXu-4Q-xLh"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xx3-3s-eGB">
@@ -124,6 +136,7 @@
         </view>
     </objects>
     <resources>
+        <image name="1" width="384" height="384"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
