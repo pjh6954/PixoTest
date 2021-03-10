@@ -333,7 +333,7 @@ class PixoTestUITests: XCTestCase {
                 cell.element(boundBy: ranNum).tap()
                 let cellAlbum = app.collectionViews["Albums.CV"].children(matching: .cell)
                 let ranNumAlbum = Int.random(in: 0..<cellAlbum.count)
-                if cellAlbum.element(boundBy: ranNumAlbum).e xists {
+                if cellAlbum.element(boundBy: ranNumAlbum).exists {
                     cellAlbum.element(boundBy: ranNumAlbum).tap()
                     completion()
                 }else{
