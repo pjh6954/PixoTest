@@ -69,7 +69,14 @@ class RootViewController: UIViewController {
         
         self.titleBtn = btn
         self.viewDisplayChanged()
-    }
+        
+        let str = "abC"
+        str.forEach { (c) in
+            if c.isUppercase {
+                
+            }
+        }
+    }//https://t1.daumcdn.net/tistory_admin/static/top/pc/img_common_tistory_190314.png
     
     //MARK: - View Controller ViewModel Setting methods
     private func viewModelBinding() { // Viewmodel의 output정의
